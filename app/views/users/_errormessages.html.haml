@@ -1,0 +1,5 @@
+- if flash[:errors]
+  %ul
+    - flash[:errors].each do |message|
+      %li
+        = message

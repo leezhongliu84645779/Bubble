@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Minipiazza</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <script src="https://use.fontawesome.com/150e01fc18.js"></script>
+  </head>
+
+  <body>
+    <div class="main-navbar">
+      <ul>
+        <!--<li class = "li-left"><a href="#">主页</a></li>-->
+        <li class = "right-first"><a href="#"><%= current_user.username%></a></li>
+        <li class = "li-right"><%= link_to "退出", session_path(current_user.id), :method => :delete%></li>
+      </ul>
+    </div>
+    <%= yield %>
+  </body>
+</html>

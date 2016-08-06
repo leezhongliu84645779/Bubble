@@ -1,0 +1,5 @@
+= render "homes/navigation"
+= form_tag(search_forum_path, :method => "get") do
+  = label_tag :school, "Search the school"
+  = text_field_tag :school, nil, :id => "school-input"
+#content-container

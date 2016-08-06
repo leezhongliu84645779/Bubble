@@ -1,0 +1,6 @@
+= form_for @user, :url => profiles_path(@user), :method => :post do |f|
+  %p
+    = f.label :真实姓名
+    = f.text_field :name, :id => "name"
+  %p
+    = f.submit "保存", :id => "save-button"

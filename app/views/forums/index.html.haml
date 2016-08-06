@@ -1,0 +1,8 @@
+= render "homes/navigation"
+#content-container
+  = form_for @forum, :url => forums_path(@forum), :method => :post do |f|
+    = f.label "Create a New School"
+    = f.text_field :name
+    = f.label "Create a New Course"
+    = f.text_field :coursename
+    = f.submit "Create the course"

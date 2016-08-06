@@ -1,0 +1,8 @@
+= form_tag sessions_path do
+  %p
+    = text_field_tag :username, nil, :placeholder => "用户名"
+  %p
+    = password_field_tag :password, nil, :placeholder => "密码"
+  %p
+    = link_to "新的用户？", users_path
+    = submit_tag "登录"
