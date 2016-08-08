@@ -1,0 +1,11 @@
+%div.background-wrap
+  = video_tag "bubblebackground.mp4", preload: "auto", autoplay: "true", loop: "loop", muted: "muted"
+
+%div.getstarted
+  %div
+    #first-page-header
+      Bubbles
+    #first-page-intro
+      Explore and find the community you will dedicate to
+    = link_to "Get Started", users_path, :id => "start_link"
+    = link_to "Login", sessions_path, :id => "login_link"

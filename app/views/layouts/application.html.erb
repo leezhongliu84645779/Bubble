@@ -3,21 +3,11 @@
   <head>
     <title>Minipiazza</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <div class="main-navbar">
-      <!--<ul>-->
-      <!--  <li class = "li-left"><a href="#">Home</a></li>-->
-      <!--  <li class = "li-left"><a href="#">News</a></li>-->
-      <!--  <li class = "li-left"><a href="#">Contact</a></li>-->
-      <!--  <li class = "li-left"><a href="#">About</a></li>-->
-      <!--  <li class = "li-right"><a href="#">User</a></li>-->
-      <!--</ul>-->
-    </div>
     <%= yield %>
   </body>
 </html>
