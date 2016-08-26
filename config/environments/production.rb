@@ -73,8 +73,8 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.web_socket_server_url = "wss://limitless-shelf-23584.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://limitless-shelf-23584.herokuapp.com', 'http://limitless-shelf-23584.herokuapp.com']
+  # config.web_socket_server_url = "wss://limitless-shelf-23584.herokuapp.com/cable"
+  # config.action_cable.allowed_request_origins = ['https://limitless-shelf-23584.herokuapp.com', 'http://limitless-shelf-23584.herokuapp.com']
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
