@@ -1,3 +1,2 @@
-uri = URI.parse(ENV["REDISTOGO_URL"])
+uri = URI.parse(ENV["redis://redistogo:41213acdaddd1baf14fb1ba1affeb42b@viperfish.redistogo.com:11532/"] || "redis://localhost:6379/" )
 REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-Resque.redis = REDIS
