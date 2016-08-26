@@ -48,6 +48,13 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -85,6 +92,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.1)
+    mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
@@ -92,6 +100,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    orm_adapter (0.5.0)
     pkg-config (1.1.7)
     puma (3.4.0)
     rack (2.0.0.rc1)
@@ -118,6 +127,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_kindeditor (0.4.7)
+      carrierwave
+      mini_magick
     railties (5.0.0.rc2)
       actionpack (= 5.0.0.rc2)
       activesupport (= 5.0.0.rc2)
@@ -128,6 +140,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    redis (3.3.1)
     rmagick (2.15.4)
     sass (3.4.22)
     sass-rails (5.0.4)
@@ -170,13 +183,17 @@ DEPENDENCIES
   bcrypt
   byebug
   carrierwave
+  ckeditor
   coffee-rails (~> 4.1.0)
   haml
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
+  mini_magick
   puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)
+  rails_kindeditor
+  redis
   rmagick
   sass-rails (~> 5.0)
   spring

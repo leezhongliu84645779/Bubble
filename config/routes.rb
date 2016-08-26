@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :chatrooms
   root "firstpages#index"
   resources :forums
   resources :users, only: [:index, :create]
@@ -10,4 +12,9 @@ Rails.application.routes.draw do
   end
   get '/forumsearch', to: "forums#search", as: 'search_forum'
   resources :firstpages
+  resources :chatrooms do
+    resources :chatroom_users
+    resources :messages
+  end
+
 end

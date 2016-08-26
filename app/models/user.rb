@@ -1,5 +1,8 @@
 class User < ApplicationRecord
     # attr_accessible :image
+    has_many :chatroom_users
+    has_many :messages 
+    has_many :chatrooms, through: :chatroom_users
     attr_accessor :password 
     before_create :encrypt_password
     validates_uniqueness_of :username, :email
@@ -8,7 +11,6 @@ class User < ApplicationRecord
     require 'carrierwave/orm/activerecord'
     mount_uploader :image, UserimageUploader
     mount_uploader :background, UserimageUploader
-    
     def encrypt_password
         self.passwordsalt = BCrypt::Engine.generate_salt
         self.encrypted_password = BCrypt::Engine.hash_secret(password, self.passwordsalt)

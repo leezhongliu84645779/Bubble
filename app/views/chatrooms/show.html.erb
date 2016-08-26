@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<% current_user.chatrooms.each do |chatroom| %>
+  <p><%= link_to chatroom.name, "#" %></p>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @chatroom.name %>
+</p>
+
+<div id = "message_board">
+	<% @chatroom.messages.each do |message| %>
+	  <% if message.user == current_user%>
+	    <div class = "message right_message"><strong><%= message.user.username %> : </strong><%= sanitize message.body%></div>
+	  <% else %>
+	    <div class = "message left_message"><strong><%= message.user.username %> : </strong><%= sanitize message.body%></div>
+	  <% end %>
+	<% end %>
+</div>
+
+<div id = "new_message">
+  <%= form_for [@chatroom, Message.new], remote: true do |f| %>
+    <%= f.kindeditor :body %>
+    <div id = "chatroom-submit">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+
+

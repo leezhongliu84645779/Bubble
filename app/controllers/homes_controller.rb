@@ -1,4 +1,8 @@
 class HomesController < ApplicationController
+    before_action :check_login
+    def check_login
+        redirect_to root_path if !current_user
+    end
     def index
         @user = current_user
     end

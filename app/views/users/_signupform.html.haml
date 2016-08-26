@@ -1,12 +1,7 @@
 = form_for @user, :url => users_path(@user) do |f|
-  %p  
-    = f.text_field :username, placeholder: "用户名"
-  %p  
-    = f.text_field :email, placeholder: "邮箱地址"
-  %p  
-    = f.password_field :password, placeholder: "密码"
-  %p  
-    = f.password_field :password_confirmation, placeholder: "再次输入密码"
-  %p
-    = link_to "已经是用户?", sessions_path
-    = f.submit "创建新的账号"
+  = f.text_field :username, placeholder: "用户名"
+  = f.text_field :email, placeholder: "邮箱地址"
+  = f.password_field :password, placeholder: "密码"  
+  = f.password_field :password_confirmation, placeholder: "再次输入密码"
+  = link_to "已经是用户?", sessions_path
+  = f.submit "创建新的账号"
