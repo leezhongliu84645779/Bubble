@@ -2,7 +2,9 @@ class MessagesController < ApplicationController
    before_action :set_chatroom
 
    def create
-   	puts "creat new message"
+      puts "the text message is"
+      message_params[:body] = message_params[:body].strip
+      puts message_params[:body]
    	@message = @chatroom.messages.new(message_params)
    	@message.user = current_user
    	@message.save

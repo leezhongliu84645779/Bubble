@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :chatrooms do
     resources :chatroom_users
     resources :messages
+    resources :chatroomposts
   end
 
 end

@@ -1,31 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<% current_user.chatrooms.each do |chatroom| %>
-  <p><%= link_to chatroom.name, "#" %></p>
-<% end %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @chatroom.name %>
-</p>
-
-<div id = "message_board">
-	<% @chatroom.messages.each do |message| %>
-	  <% if message.user == current_user%>
-	    <div class = "message right_message"><strong><%= message.user.username %> : </strong><%= sanitize message.body%></div>
-	  <% else %>
-	    <div class = "message left_message"><strong><%= message.user.username %> : </strong><%= sanitize message.body%></div>
-	  <% end %>
-	<% end %>
-</div>
-
-<div id = "new_message">
-  <%= form_for [@chatroom, Message.new], remote: true do |f| %>
-    <%= f.kindeditor :body %>
-    <div id = "chatroom-submit">
-      <%= f.submit %>
+<div id = "channel-main-container">
+  <div id = "left-container">
+    <div id = "group-container">
+      <h1>My Group</h1>
+      <% current_user.chatrooms.each do |chatroom|%>
+        <p><%= link_to chatroom.name, chatroom_path(chatroom)%>
+      <% end %>
     </div>
-  <% end %>
+    <div id = "post-container">
+      <%= link_to chatroom_chatroomposts_path(params[:id]) do %>
+        <p><i class="fa fa-plus" aria-hidden="true"></i>New Post</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div id = "right-container">
+    <p>
+      <%= @chatroom.name %>
+    </p>
+    <div id = "message-board">
+	    <% @chatroom.messages.each do |message| %>
+	      <div class = "every-post"><strong><%= message.user.username %> : </strong><%= sanitize message.body%></div>
+	    <% end %>
+    </div>
+
+    <div id = "new_message">
+      <%= form_for [@chatroom, Message.new], remote: true do |f| %>
+        <%= f.kindeditor :body %>
+        <div id = "chatroom-submit">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

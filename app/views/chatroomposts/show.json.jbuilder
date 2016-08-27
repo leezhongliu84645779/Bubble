@@ -1,0 +1,1 @@
+json.partial! "chatroomposts/chatroompost", chatroompost: @chatroompost

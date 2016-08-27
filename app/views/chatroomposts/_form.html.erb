@@ -1,0 +1,22 @@
+<%= form_for chatroompost, url: chatroom_chatroomposts_path(@chatroom, chatroompost) do |f| %>
+  <% if chatroompost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(chatroompost.errors.count, "error") %> prohibited this chatroompost from being saved:</h2>
+
+      <ul>
+      <% chatroompost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

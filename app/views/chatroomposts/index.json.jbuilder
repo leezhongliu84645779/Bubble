@@ -1,0 +1,1 @@
+json.array! @chatroomposts, partial: 'chatroomposts/chatroompost', as: :chatroompost
