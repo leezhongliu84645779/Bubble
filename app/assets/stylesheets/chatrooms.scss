@@ -20,7 +20,7 @@ body {
 	  color: white;
 	  #group-container {
 	    height: 75vh;
-	    overflow: scroll;
+	    overflow: auto;
 	    border-bottom: 2px solid grey;
 	    h1 {
 	      height: 37px;
@@ -62,7 +62,7 @@ body {
 	  height: 100vh;
 	  #message-board{
 	    height: 75vh;
-	    overflow: scroll;
+	    overflow: auto;
 	    margin-left: 10%;
 	    margin-right: 10%;
 	    width: 80%;
