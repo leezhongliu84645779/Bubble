@@ -28,6 +28,7 @@ class ChatroomsController < ApplicationController
 
     respond_to do |format|
       if @chatroom.save
+        @chatroom.chatroom_users.where(:user_id => current_user.id).first_or_create
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
         format.json { render :show, status: :created, location: @chatroom }
       else

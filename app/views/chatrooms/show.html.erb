@@ -23,9 +23,11 @@
 	    <% end %>
     </div>
 
-    <div id = "new_message">
+    <div id = "new-message">
       <%= form_for [@chatroom, Message.new], remote: true do |f| %>
-        <%= f.kindeditor :body %>
+        <div id = "message-input">
+          <%= f.text_field :body %>
+        </div>
         <div id = "chatroom-submit">
           <%= f.submit %>
         </div>
