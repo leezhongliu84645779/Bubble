@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     resources :chatroomposts
   end
 
+  
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160826143052) do
+ActiveRecord::Schema.define(version: 20160831060845) do
 
   create_table "chatroom_users", force: :cascade do |t|
     t.integer  "chatroom_id"
@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(version: 20160826143052) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "coursename"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|

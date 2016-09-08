@@ -10,6 +10,8 @@ App.chatrooms = App.cable.subscriptions.create("ChatroomsChannel", {
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
     console.log(data)
-    $('#message-board').append(data.message)
+    if (document.getElementById("message-board").dataset.value == data.chatroom_id){
+      $("#message-board").append(data.message)
+    }
   }
 });

@@ -17,11 +17,11 @@
     <p>
       <%= @chatroom.name %>
     </p>
-    <div id = "message-board">
+    <%= content_tag :div, :id => "message-board", 'data-value' => @chatroom.id do %>
 	    <% @chatroom.messages.each do |message| %>
 	      <div class = "every-post"><strong><%= message.user.username %> : </strong><%= sanitize message.body%></div>
 	    <% end %>
-    </div>
+    <% end %>
 
     <div id = "new-message">
       <%= form_for [@chatroom, Message.new], remote: true do |f| %>
