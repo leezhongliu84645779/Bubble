@@ -1,3 +1,73 @@
 // Place all the styles related to the chatroomposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	background-color: white;
+	background-image: none;
+}
+
+#form_div{
+  background-color: white;
+  border-radius: 0.5em;
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  #form_div_description{
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px; 
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    background-color: white;
+    border-bottom: 1px solid grey;
+  }
+  #form_container{
+    #chatroompost_content{
+      min-height: 80px;
+      margin-left: 10p;
+      margin-right: 10px;
+    } 
+  }
+}
+
+#each_group_post{
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	min-height: 150px;
+	background-color: white;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid grey;
+    #photo_container{
+      display: inline-block;
+      img{
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+    #author_container {
+      position: relative;
+      display: inline-block;
+      top: -45px;
+      font-size: 15px;
+      color: black;
+      font-weight: 700;
+      margin-left: 5px;
+    }
+
+    #post_container {
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-left: 10px;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+}

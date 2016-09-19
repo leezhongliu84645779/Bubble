@@ -1,0 +1,4 @@
+= form_for chatroompost, url: chatroom_chatroomposts_path(@chatroom,chatroompost) do |f|
+  = f.label :content
+  = f.text_field :content
+  = f.submit

@@ -5,7 +5,8 @@ class ChatroompostsController < ApplicationController
   # GET /chatroomposts
   # GET /chatroomposts.json
   def index
-    @chatroomposts = Chatroompost.all
+    @chatroompost = @chatroom.chatroomposts.new
+    @chatroomposts = @chatroom.chatroomposts.all
   end
 
   # GET /chatroomposts/1
@@ -25,7 +26,7 @@ class ChatroompostsController < ApplicationController
   # POST /chatroomposts
   # POST /chatroomposts.json
   def create
-    @chatroompost = Chatroompost.new(chatroompost_params)
+    @chatroompost = @chatroom.chatroomposts.new(chatroompost_params)
     respond_to do |format|
       if @chatroompost.save
         format.html { redirect_to chatroom_chatroomposts_path(@chatroom), notice: 'Chatroompost was successfully created.' }
@@ -72,6 +73,6 @@ class ChatroompostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chatroompost_params
-      params.require(:chatroompost).permit(:author)
+      params.require(:chatroompost).permit(:content, :author)
     end
 end

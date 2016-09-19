@@ -1,0 +1,20 @@
+#form_div
+  #form_div_description
+    Share something interesting!
+  #form_container
+    = form_for @chatroompost, url: chatroom_chatroomposts_path(@chatroom,@chatroompost) do |f|
+      = f.text_area :content
+      = f.hidden_field :author, :value => current_user.username
+      = f.submit
+
+- @chatroomposts.each do |chatroompost|
+  #each_group_post
+    #photo_container
+      = image_tag src = Chatroompost.find_post_author_img(chatroompost), :id => "selfie"
+    #author_container
+      = chatroompost.author
+    #post_container
+      = chatroompost.content
+    #appraisal_container
+    #reply
+
