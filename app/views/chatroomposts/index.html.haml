@@ -10,11 +10,13 @@
 - @chatroomposts.each do |chatroompost|
   #each_group_post
     #photo_container
-      = image_tag src = Chatroompost.find_post_author_img(chatroompost), :id => "selfie"
+      <!-- = image_tag src = Chatroompost.find_post_author_img(chatroompost), :id => "selfie" -->
+      = image_tag src = "http://gurucul.com/wp-content/uploads/2015/01/default-user-icon-profile.png", :id => "selfie"
     #author_container
       = chatroompost.author
     #post_container
       = chatroompost.content
     #appraisal_container
+      %i.fa.fa-thumbs-up
     #reply
 

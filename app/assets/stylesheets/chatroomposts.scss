@@ -14,7 +14,7 @@ body{
   margin-left: 20%;
   margin-right: 20%;
   #form_div_description{
-    min-width: 900px;
+    min-width: 800px;
     padding-top: 20px;
     margin-left: 20px;
     margin-right: 20px; 
@@ -23,30 +23,30 @@ body{
     font-weight: 600;
     height: 40px;
     background-color: white;
-    border-bottom: 10px solid #6495ED;
+    border-bottom: 1px solid #6495ED;
   }
   #form_container{
     background-color: white;
-    min-width: 920px;
+    min-width: 820px;
     #chatroompost_content{
       padding-left: 17px;
       padding-top: 17px;
       font-size: 14px;
       margin-top: 45px;
-      margin-bottom: 45px;
+      margin-bottom: 18px;
       height: 150px;
       margin-left: 185px;
       margin-right: 185px;
-      width: 550px;
+      width: 450px;
       overflow: scroll;
       border: 1px solid #6495ED;
       border-radius: 0.5em
     } 
     input[type = "submit"] {
       margin-bottom: 20px;
-      margin-left: 605px;
+      margin-left: 505px;
       width: 150px;
-      height: 50px;
+      height: 40px;
       border-radius: 0.5em
     }
   }
@@ -57,10 +57,10 @@ body{
 	margin-left: 20%;
 	margin-right: 20%;
 	min-height: 150px;
+	min-width: 820px;
 	background-color: white;
     margin-bottom: 30px;
     margin-top: 10px;
-    border: 1px solid grey;
     #photo_container{
       display: inline-block;
       img{
@@ -88,5 +88,16 @@ body{
       margin-left: 10px;
       margin-top: 20px;
       margin-right: 10px;
+      min-height: 105px;
+    }
+
+    #appraisal_container {
+      height: 45px;
+      background-color: #E6E6FA;
+      color: black;
+      padding-left: 17px;
+      font-size: 32px;
+      padding-top: 12px;
+      padding-bottom: 4px;
     }
 }
