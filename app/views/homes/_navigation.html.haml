@@ -2,7 +2,7 @@
   - unless current_user.background.blank?
     = image_tag src = current_user.background_url(:arm), :id => "background"
   - else
-    = image_tag src = "http://www.clipartkid.com/images/569/blue-background-scrub-masters-commercial-cleaning-inc-B7Uop0-clipart.jpg", :id => "background"
+    = image_tag src = "http://wallpapercave.com/wp/DtslnrT.jpg", :id => "background"
   #background-slogan
     %p#title
       Bubbles
@@ -32,19 +32,17 @@
       My Group
   #all-my-group
     - current_user.chatrooms.each do |chatroom|
-      #each-group
-        #each-group-img
-          = image_tag src = "http://2.bp.blogspot.com/-fg6_7m1tjRw/VFidSDNUVjI/AAAAAAAAC7A/3QvBHV4ZpI8/s1600/OnlineDating1.jpg"
-        #each-group-name
-          = chatroom.name
+      = link_to chatroom_path(chatroom) do
+        .each-group
+          .each-group-img
+            = image_tag src = "http://res.freestockphotos.biz/pictures/9/9367-a-human-skull-on-a-black-background-pv.jpg"
+          .each-group-name
+            = chatroom.name
 
 %footer
   .introduction-title
     %h1
       About Us Information
-
-
-
 
 / %div.modal#add
 /   %div.modal-container
@@ -56,4 +54,3 @@
 /         %p
 /           = f.submit "Save Your Image", :id => "save-button"
 /     = link_to "close", "#", :id => "close-link"
-    

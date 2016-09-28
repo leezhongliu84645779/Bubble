@@ -10,6 +10,11 @@ $ ->
   $('#selfie').mouseleave ->
     $('#selfie').css("opacity", 1)
     $('#image-cammera').css("font-size", "35px")
+
+  $('.each-group').mousemove ->
+    $(this).css("opacity", 0.5)
+  $('.each-group').mouseleave ->
+    $(this).css("opacity", 1)
   
   $('#image-cammera').click ->
     window.location.href = "#add"
