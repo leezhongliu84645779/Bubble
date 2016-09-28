@@ -4,15 +4,18 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://use.fontawesome.com/150e01fc18.js"></script>
+    <script src = "https://use.fontawesome.com/150e01fc18.js"></script>
   </head>
 
   <body>
-    <div class="main-navbar">
-      <ul>
-        <!--<li class = "li-left"><a href="#">主页</a></li>-->
-        <li class = "right-first"><a href="#"><%= current_user.username%></a></li>
-        <li class = "li-right"><%= link_to "退出", session_path(current_user.id), :method => :delete%></li>
+    <div class = "main-navbar">
+      <ul class = "ul-left"> 
+        <li>Logo</li>
+      </ul>
+      <ul class = "ul-right">
+        <li><i class="fa fa-home" aria-hidden="true"></i>Home</li>
+        <li><i class="fa fa-file-text" aria-hidden="true"></i>Profile</li>
+        <li><i class="fa fa-user-plus" aria-hidden="true"></i>Find Friends</li>
       </ul>
     </div>
     <%= yield %>

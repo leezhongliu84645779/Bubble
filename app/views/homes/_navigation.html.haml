@@ -2,41 +2,58 @@
   - unless current_user.background.blank?
     = image_tag src = current_user.background_url(:arm), :id => "background"
   - else
-    = image_tag src = asset_path("defaultbackgroundimage.jpeg"), :id => "background"
-#background-comment
-  %i.fa.fa-camera#background-camera
+    = image_tag src = "http://www.clipartkid.com/images/569/blue-background-scrub-masters-commercial-cleaning-inc-B7Uop0-clipart.jpg", :id => "background"
+  #background-slogan
+    %p#title
+      Bubbles
+    %p#slogan
+      Explore and find the community you will dedicate to 
+  #image-frame
+    - unless current_user.image.blank?
+      #image-container
+        = image_tag src = current_user.image_url(:thumb), :id => "selfie"
+    - else
+      #image-container
+        = image_tag src = asset_path("user-image.png"), :id => "selfie"
+    #image-cammera
+      %i.fa.fa-camera#selfie-camera
+#sub-navbar
+.introduction-title
+  %h1
+    About Me
 
-  
-- unless current_user.image.blank?
-  #image-frame
-    #image-container
-      = image_tag src = current_user.image_url(:thumb), :id => "selfie"
-    #image-comment
-      %i.fa.fa-camera#selfie-camera
-- else
-  #image-frame
-    #image-container
-      = image_tag src = asset_path("user-image.png"), :id => "selfie"
-    #image-comment
-      %i.fa.fa-camera#selfie-camera
-#second-navbar
-  %ul
-    %li.right-first
-      = link_to '个人信息', profiles_path
-    %li
-      = link_to '生活'
-    %li
-      = link_to '日志'
-    %li
-      = link_to '发言记录'
-%div.modal#add
-  %div.modal-container
-    %h2 上传图片
-    #photo-form-div
-      = form_for @user, :url => homes_path(@user), :method => :post do |f|
-        %p
-          = f.file_field :image, :id => "file"
-        %p
-          = f.submit "Save Your Image", :id => "save-button"
-    = link_to "close", "#", :id => "close-link"
+#self-introduction
+  %p
+    I am an applied math major graduate from UC Berkeley.
+
+#my-group
+  .introduction-title
+    %h1
+      My Group
+  #all-my-group
+    - current_user.chatrooms.each do |chatroom|
+      #each-group
+        #each-group-img
+          = image_tag src = "http://2.bp.blogspot.com/-fg6_7m1tjRw/VFidSDNUVjI/AAAAAAAAC7A/3QvBHV4ZpI8/s1600/OnlineDating1.jpg"
+        #each-group-name
+          = chatroom.name
+
+%footer
+  .introduction-title
+    %h1
+      About Us Information
+
+
+
+
+/ %div.modal#add
+/   %div.modal-container
+/     %h2 上传图片
+/     #photo-form-div
+/       = form_for @user, :url => homes_path(@user), :method => :post do |f|
+/         %p
+/           = f.file_field :image, :id => "file"
+/         %p
+/           = f.submit "Save Your Image", :id => "save-button"
+/     = link_to "close", "#", :id => "close-link"
     

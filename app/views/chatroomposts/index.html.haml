@@ -6,6 +6,8 @@
       = f.text_area :content
       = f.hidden_field :author, :value => current_user.username
       = f.submit
+      = label_tag "upload", nil, class: "custom-file-upload"
+      = f.file_field :content, :id => "file-upload"
 
 - @chatroomposts.each do |chatroompost|
   #each_group_post
