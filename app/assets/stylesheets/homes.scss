@@ -50,6 +50,18 @@ div.main-navbar{
       i.fa.fa-user-plus {
         font-size: 21px;
       }
+      i.fa.fa-sign-out {
+        font-size: 21px;
+      }
+      a{
+        color: #696969;
+        text-decoration: none;
+        /*position: relative;
+        top: 3px;*/
+      }
+      a:hover {
+        background-color: white;
+      }
     }
   }
 }

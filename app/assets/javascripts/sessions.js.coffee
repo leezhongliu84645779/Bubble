@@ -1,0 +1,3 @@
+$ ->
+  $('#username').click ->
+    alert("hehehe")
