@@ -1,3 +1,8 @@
+body,html{
+	height: 100%;
+	width: 100%;
+	background: url("http://hdwallsize.com/wp-content/uploads/2013/05/Green-Background-Abstract-Wallpaper-HD.jpg");
+}
 .backgroud-wrap{
 	position: fixed;
 	left: 0;
@@ -86,5 +91,109 @@
             border: 1px solid white;
         }
 
+	}
+	
+	div#login-form-container, div#signup-form-container{
+		position: relative;
+        left: -70px;
+        opacity: 0.7;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 0.5em;
+        h1{
+			font-size: 35px;
+			margin-top: 40px;
+			color: green;
+			font-weight: 500;
+		}
+        input:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0px 1000px white inset;
+          color: white;
+        }
+        input[type = "text"], input[type = "password"] {
+        	margin-left: 50px;
+        	margin-right: 50px;
+        	font-size: 27px;
+        	font-weight: 700;
+        	height: 40px;
+        	display: inline-block;
+		    margin-bottom: 30px;
+            outline: 0;
+		    width: 100%;
+		    border-bottom: 2px solid green;
+		    border-radius: 0;
+		    color: grey;
+        }
+
+	    div.error_messgae {
+	    	padding-left: 5px;
+            padding-top: 3px;
+            font-size: 23px;
+            color: red;
+	    	margin-left: 50px;
+	    	margin-right: 50px;
+	    	width: 350px!important;
+	    	min-height: 30px;
+	    	max-height: 35px;
+	    }
+	    input[type = "submit"] {
+	    	margin-top: 50px;
+	    	height: 55px;
+	    	background-color: white!important;
+	    	border: 1px solid green;
+		    font-size: 12px;
+		    font-weight: 700;
+		    color: white;
+		    cursor: pointer;
+		    font-size: 25px;
+		    color: green;
+		    font-weight: 400;
+	    }
+	}
+
+	div#login-form-container{
+		top: -100px;
+		height: 460px;
+		width: 450px;
+		h1{
+			margin-left: 185px;
+		}
+		input[type = "text"] {
+		    margin-top: 40px;
+		    width: 350px!important;
+	    }
+
+	    input[type = "password"] {
+		    margin-top: 30px;
+		    width: 350px!important;
+	    }
+
+	    input[type = "submit"]{
+            width: 145px;
+            margin-left: 265px;
+	    }
+	}
+
+	div#signup-form-container{
+		top: -165px;
+		height: 575px;
+		width: 480px;
+		h1{
+			margin-left: 175px;
+		}
+		input[type = "text"] {
+		    margin-top: 15px;
+		    width: 380px!important;
+	    }
+
+	    input[type = "password"] {
+		    margin-top: 15px;
+		    width: 380px!important;
+	    }
+
+	    input[type = "submit"]{
+            width: 245px;
+            margin-left: 215px;
+	    }
 	}
 }

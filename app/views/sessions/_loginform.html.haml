@@ -1,5 +1,8 @@
-= form_tag sessions_path do
-  = text_field_tag :username, nil, :placeholder => "用户名"
-  = password_field_tag :password, nil, :placeholder => "密码"
-  = link_to "新的用户？", users_path
-  = submit_tag "登录"
+#login-form-container
+  %h1
+    Login
+  = form_tag sessions_path, :remote => true do
+    = text_field_tag :username, nil, :placeholder => "Username"
+    = password_field_tag :password, nil, :placeholder => "Password"
+    %div.error_message
+    = submit_tag "Login"

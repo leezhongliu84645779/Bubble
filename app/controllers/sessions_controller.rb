@@ -17,14 +17,23 @@ class SessionsController < ApplicationController
     def create
         user = User.find_by_username(user_params[:username])
         if !user
-            flash[:loginerror] = "用户名不存在"
-            redirect_to action: "index"
+            @loginerror = "The Username doesn't exist"
+            puts "enter here no user"
+            respond_to do |format|
+                puts "here too!"
+                format.js{}
+            end
         elsif !User.authenticate(user, user_params[:password])
-            flash[:loginerror] = "用户名与密码不匹配"
-            redirect_to action: "index"
+            @loginerror = "The Username doesn't match with the password"
+            puts "enter here not match"
+            respond_to do |format|
+                format.js{}
+            end
         else
+            @loginerror = ""
+            puts "enter here everything is correct"
             session[:user_id] = user.id
-            redirect_to homes_path
+            render :js => "window.location = '#{homes_path}'"
         end
     end
     

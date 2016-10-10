@@ -17,10 +17,13 @@ class UsersController < ApplicationController
     @new_user = User.new(user_params)
     if @new_user.save
       session[:user_id] = @new_user.id
-      redirect_to homes_path
+      render :js => "window.location = '#{homes_path}'"
     else
       flash[:errors] = @new_user.errors.full_messages
-      redirect_to action: "index"
+      @signuperror = flash[:errors][0]
+      respond_to do |format|
+        format.js{}
+      end
     end
   end
 
