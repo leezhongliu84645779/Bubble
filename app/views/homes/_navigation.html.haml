@@ -55,13 +55,19 @@
     %h1
       About Us Information
 
-/ %div.modal#add
-/   %div.modal-container
-/     %h2 上传图片
-/     #photo-form-div
-/       = form_for @user, :url => homes_path(@user), :method => :post do |f|
-/         %p
-/           = f.file_field :image, :id => "file"
-/         %p
-/           = f.submit "Save Your Image", :id => "save-button"
-/     = link_to "close", "#", :id => "close-link"
+
+%div.modal#add
+  %div.modal-container
+    %h2 Image Upload
+    = link_to ("<i class='fa fa-times' aria-hidden='true'></i>").html_safe, homes_path, :id => "close-selfie-upload"
+    #photo-form-div
+      = form_for @user, :url => homes_path(@user), :method => :post do |f|
+        %label.custom-file-upload
+          %i.fa.fa-upload
+          Upload Image
+          = f.file_field :image, :id => "file"
+        %p
+          = button_tag do 
+            <i class='fa fa-floppy-o' aria-hidden='true'></i> Save Image
+          / = f.submit ("<i class='fa fa-floppy-o' aria-hidden='true'></i>Save Image").html_safe, :id => "save-button"
+    = link_to "close", "#", :id => "close-link"

@@ -16,18 +16,17 @@ $ ->
   $('.each-group-img').mouseleave ->
     $(this).css("opacity", 1)
   
-  $('#image-cammera').click ->
-    window.location.href = "#add"
+  
+
+  $('#image-cammera, #image-container').on "click", ->
+    $('body').css("background-color", "black")
+    $('.main-navbar, #background-container').css("opacity", 0.5)
+    $('.modal').css("display", "block")
     $('#file').attr("name", "user[image]")
+    window.location.href = "#add"
   
   
 
 
-  $('#background-comment').click ->
-    window.location.href = "#add"
-    $('#file').attr("name", "user[background]")  
   
-  $('#background-container').click ->
-    window.location.href = "#add"
-    $('#file').attr("name", "user[background]")
     
