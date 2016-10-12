@@ -2,7 +2,7 @@
   - unless current_user.background.blank?
     = image_tag src = current_user.background_url(:arm), :id => "background"
   - else
-    = image_tag src = "http://wallpapercave.com/wp/DtslnrT.jpg", :id => "background"
+    = image_tag src = "https://i.ytimg.com/vi/oeFAKFJQzek/maxresdefault.jpg", :id => "background"
   #background-slogan
     %p#title
       Bubbles
@@ -20,24 +20,35 @@
 #sub-navbar
 .introduction-title
   %h1
-    About Me
+    About Me (
+    = current_user.username
+    )  
+    = link_to ("<i class='fa fa-pencil-square-o' aria-hidden='true'></i>").html_safe, new_home_path, :remote => true, :class => "link_to_group"
 
 #self-introduction
   %p
-    I am an applied math major graduate from UC Berkeley.
+    - if current_user.introduction
+      = current_user.introduction
+    - else
+      Give a brief introduction about yourself.
 
 #my-group
   .introduction-title
     %h1
       My Group
-  #all-my-group
-    - current_user.chatrooms.each do |chatroom|
-      = link_to chatroom_path(chatroom) do
-        .each-group
-          .each-group-img
-            = image_tag src = "http://res.freestockphotos.biz/pictures/9/9367-a-human-skull-on-a-black-background-pv.jpg"
-          .each-group-name
-            = chatroom.name
+      = link_to ("<i class='fa fa-plus' aria-hidden='true'></i>/<i class='fa fa-universal-access' aria-hidden='true'></i>").html_safe, chatrooms_path, :class => "link_to_group"
+  - if current_user.chatrooms.empty?
+    %p
+      You haven't joined any group yet.
+  - else
+    #all-my-group
+      - current_user.chatrooms.each do |chatroom|
+        = link_to chatroom_path(chatroom) do
+          .each-group
+            .each-group-img
+              = image_tag src = "http://all4desktop.com/data_images/original/4246314-bubble.jpg"
+            .each-group-name
+              = chatroom.name
 
 %footer
   .introduction-title

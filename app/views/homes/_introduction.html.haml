@@ -1,0 +1,3 @@
+= form_for @user, :url => create_intro_path(@user), :method => "post" do |f|
+    = f.text_area :introduction, :placeholder => "Write something about yourself", :id => "introduction-field"
+    = f.submit "Submit", :id => "introduction-button"

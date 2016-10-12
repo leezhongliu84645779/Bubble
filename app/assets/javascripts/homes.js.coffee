@@ -11,9 +11,9 @@ $ ->
     $('#selfie').css("opacity", 1)
     $('#image-cammera').css("font-size", "35px")
 
-  $('.each-group').mousemove ->
-    $(this).css("opacity", 0.5)
-  $('.each-group').mouseleave ->
+  $('.each-group-img').mousemove ->
+    $(this).css("opacity", 0.3)
+  $('.each-group-img').mouseleave ->
     $(this).css("opacity", 1)
   
   $('#image-cammera').click ->

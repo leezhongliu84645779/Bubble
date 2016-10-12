@@ -19,11 +19,21 @@ class HomesController < ApplicationController
     end
     
     def new
+        puts("go to this method")
+        @user = current_user
+        respond_to do |format|
+            format.js{puts "hehehehehehehe"}
+        end
     end
-    
+
+    # an action of creating or updating the personal intro
+    def createupdateintro
+        current_user.update(:introduction => user_params[:introduction])
+        redirect_to homes_path
+    end
     
     private
     def user_params
-      params.require(:user).permit(:image, :background)
+      params.require(:user).permit(:image, :background, :introduction)
     end
 end

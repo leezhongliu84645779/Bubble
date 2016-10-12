@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916175954) do
+ActiveRecord::Schema.define(version: 20161012100133) do
 
   create_table "chatroom_users", force: :cascade do |t|
     t.integer  "chatroom_id"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160916175954) do
     t.string   "image"
     t.string   "background"
     t.string   "name"
+    t.text     "introduction"
   end
 
 end

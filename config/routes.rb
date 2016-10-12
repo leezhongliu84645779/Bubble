@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create]
   resources :sessions, only: [:index, :create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :homes, only: [:index, :create]
+  resources :homes, only: [:index, :create, :new]
   scope '/homes' do
     resources :profiles, only: [:index, :create]
   end
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :messages
     resources :chatroomposts
   end
+
+  post '/createintro/:id', to: "homes#createupdateintro", as: "create_intro"
 
   
 
