@@ -3,9 +3,21 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
+  before_filter :set_cache_headers, :check_login
+
   private
   def current_user
   	cookies.signed[:user_id] = session[:user_id] if session[:user_id]
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
+
+  def check_login
+  	redirect_to root_path if current_user.nil?
   end
 end

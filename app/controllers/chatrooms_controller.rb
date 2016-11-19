@@ -2,9 +2,13 @@ class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
 
   # GET /chatrooms
-  # GET /chatrooms.json
+  # GET /chatrooms.js
   def index
     @chatrooms = Chatroom.all
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   # GET /chatrooms/1
@@ -15,6 +19,9 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/new
   def new
     @chatroom = Chatroom.new
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   # GET /chatrooms/1/edit

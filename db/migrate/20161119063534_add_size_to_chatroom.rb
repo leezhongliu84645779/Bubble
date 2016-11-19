@@ -1,0 +1,5 @@
+class AddSizeToChatroom < ActiveRecord::Migration[5.0]
+  def change
+    add_column :chatrooms, :size, :string
+  end
+end

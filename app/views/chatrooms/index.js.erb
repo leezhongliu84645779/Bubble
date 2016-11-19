@@ -1,0 +1,31 @@
+$(document).ready(
+	function() {
+		if ($('#chatroom-page-container').find('.createchatroom').length !== 0) {
+			$('#chatroom-page-container').find('.createchatroom').remove();
+		}
+		if ($('#chatroom-page-container').find('.showchatroom').length !== 0 ) {
+		}
+		else {
+			var appenddiv = $('<div></div>');
+			var appendh = $('<h1>All Groups</h1>');
+			$('#chatroom-page-container').append(appendh);
+			$('#chatroom-page-container').append(appenddiv);
+			$('#chatroom-page-container').find('h1').addClass("chatroomheader");
+			$('#chatroom-page-container').find('div').last().addClass("showchatroom");
+			<% @chatrooms.each do |chatroom| %>
+				$('.showchatroom').append("<p>" + "<%= j link_to chatroom.name, chatroom_chatroom_users_path(chatroom), :method => :post, :id => chatroom.id%>" + "</p>");
+				$('.showchatroom').find("#<%= chatroom.id %>").append("<span>" + " <%= chatroom.users.length %>" + " users chatting in this room</span>");
+				$('.showchatroom').find("#<%= chatroom.id %>").find('span').last().addClass("tailspan");
+			<% end %>
+			$('.showchatroom p').mouseover(function() {
+				$(this).find('a').prepend("<span>Join Now</span>");
+				$(this).find('span').first().addClass("middlespan");
+			});
+
+			$('.showchatroom p').mouseout(function() {
+				$(this).find('a').find('.middlespan').remove();
+			});
+		}
+	}
+);
+

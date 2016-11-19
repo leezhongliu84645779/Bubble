@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Bubbles</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <script src = "https://use.fontawesome.com/150e01fc18.js"></script>
+  </head>
+
+  <body class = "chatroom-body">
+    <div class = "main-navbar">
+      <ul class = "ul-left"> 
+        <li>Logo</li>
+      </ul>
+      <ul class = "ul-right">
+        <li><i class="fa fa-home" aria-hidden="true"></i><%= link_to 'Home', homes_path %></li>
+        <li><i class="fa fa-file-text" aria-hidden="true"></i>Profile</li>
+        <li><i class="fa fa-user-plus" aria-hidden="true"></i>Find Friends</li>
+        <li><i class="fa fa-sign-out" aria-hidden="true"></i><%= link_to 'Logout', session_path(current_user), :method => 'delete' %></li>
+      </ul>
+    </div>
+    <%= yield %>
+  </body>
+</html>
