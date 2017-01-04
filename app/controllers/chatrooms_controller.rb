@@ -5,9 +5,26 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms.js
   def index
     @chatrooms = Chatroom.all
-    respond_to do |format|
-      format.html {}
-      format.js {}
+    session[:category] ||= ""
+    session[:size] ||= ""
+    session[:position] ||= ""
+    if session[:category] != params[:category]
+      session[:category] = session[:category] + params[:category] + "%" if !params[:category].nil? and !session[:category].split("%").include?(params[:category])
+    end
+    if session[:size] != params[:size]
+      session[:size] = session[:size] + params[:size] + "%" if !params[:size].nil? and !session[:size].split("%").include?(params[:size])
+    end
+    if session[:position] != params[:position]
+      session[:position] = session[:position] + params[:position] + "%" if !params[:position].nil? and !session[:position].split("%").include?(params[:position])
+    end
+    category = session[:category].split("%")
+    size = session[:size].split("%")
+    position = session[:position].split("%")
+    @chatrooms = @chatrooms.where(category: category) if !session[:category].empty?
+    @chatrooms = @chatrooms.where(size: size) if !session[:size].empty?
+    @chatrooms = @chatrooms.where(position: position) if !session[:position].empty?
+    if session[:position] != params[:position] || session[:size] != params[:size] || session[:category] != params[:category]
+      return redirect_to :category => session[:category] , :size => session[:size], :position => session[:position]
     end
   end
 
@@ -20,7 +37,7 @@ class ChatroomsController < ApplicationController
   def new
     @chatroom = Chatroom.new
     respond_to do |format|
-      format.js {}
+      format.html {}
     end
   end
 
@@ -77,6 +94,6 @@ class ChatroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chatroom_params
-      params.require(:chatroom).permit(:name)
+      params.require(:chatroom).permit(:name, :size, :category, :visibility, :position)
     end
 end

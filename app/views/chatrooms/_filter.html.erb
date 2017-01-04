@@ -1,0 +1,64 @@
+<div id = "chatroom-filter">
+	<div id = "all-filter"><div>
+	<ul id="drop-nav">
+		<div></div>
+  		<li><a href="#">Group Topic</a>
+    		<ul>
+      			<li>
+      				<%= link_to 'Sports', chatrooms_path(:category =>  "Sports") %>
+      			</li>
+      			<li>
+      				<%= link_to 'Music', chatrooms_path(:category => "Music") %>
+      			</li>
+      			<li>
+      				<%= link_to 'Entertainment', chatrooms_path(:category => "Entertainment") %>
+      			</li>
+      			<li>
+      				<%= link_to 'NBA', chatrooms_path(:category => "NBA") %>
+      			</li>
+    		</ul>
+  		</li>
+  		<li><a href="#">Group Size</a>
+    		<ul>
+      			<li>
+      				<%= link_to '1-5 persons', chatrooms_path(:size =>  "1-5 persons") %>
+      			</li>
+      			<li>
+      				<%= link_to '6-10 persons', chatrooms_path(:size =>  "6-10 persons") %>
+      			</li>
+      			<li>
+      				<%= link_to '11-50 persons', chatrooms_path(:size =>  "11-50 persons") %>
+      			</li>
+      			<li>
+      				<%= link_to '50-100 persons', chatrooms_path(:size =>  "50-100 persons") %>
+      			</li>
+      			<li>
+      				<%= link_to '100-200 persons', chatrooms_path(:size =>  "100-200 persons") %>
+      			</li>
+      			<li>
+      				<%= link_to 'More than 200 persons', chatrooms_path(:size =>  "More than 200 persons") %>
+      			</li>
+    		</ul>
+  		</li>
+  		<li><a href="#">Group Meet Position</a>
+    		<ul>
+    			<li>
+      				<%= link_to 'Beijing', chatrooms_path(:position =>  "Beijing") %>
+      			</li>
+      			<li>
+      				<%= link_to 'Shanghai', chatrooms_path(:position =>  "Shanghai") %>
+      			</li>
+    		</ul>
+  		</li>
+	</ul>
+	<div class = "showchatroom">
+		<h1 class = "chatroomheader">All Groups</h1>
+		<% @chatrooms.each do |chatroom| %>
+			<p>
+				<%= link_to chatroom.name, chatroom_chatroom_users_path(chatroom), :method => :post, :id => chatroom.id%>
+				<span class = "tailspan"><%= chatroom.users.length %> users chatting in this room</span>
+			</p>
+		<% end %>
+	</div>
+
+</div>

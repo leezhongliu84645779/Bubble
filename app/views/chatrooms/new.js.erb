@@ -3,10 +3,12 @@ $(document).ready(
 		if ($('#chatroom-page-container').find('.showchatroom').length !== 0 ) {
 			$('#chatroom-page-container').find('.showchatroom').remove();
 			$('#chatroom-page-container').find('.chatroomheader').remove();
+			$('#chatroom-page-container').find('#chatroom-filter').remove();
 		}
 		if ($('#chatroom-page-container').find('.createchatroom').length !== 0 ) {
 		}
 		else{
+			// $('#chatroom-page-container').find('#chatroom-filter').remove();
 			$('#chatroom-page-container').append("<div></div>");
 			$('#chatroom-page-container').find('div').last().addClass('createchatroom');
 			$("<%= escape_javascript(render 'form') %>").appendTo('.createchatroom');

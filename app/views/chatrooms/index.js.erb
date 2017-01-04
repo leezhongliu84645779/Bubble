@@ -2,10 +2,12 @@ $(document).ready(
 	function() {
 		if ($('#chatroom-page-container').find('.createchatroom').length !== 0) {
 			$('#chatroom-page-container').find('.createchatroom').remove();
+			$('#chatroom-page-container').find('#chatroom-filter').remove();
 		}
 		if ($('#chatroom-page-container').find('.showchatroom').length !== 0 ) {
 		}
 		else {
+			$("<%= escape_javascript(render 'filter') %>").appendTo('#chatroom-page-container');
 			var appenddiv = $('<div></div>');
 			var appendh = $('<h1>All Groups</h1>');
 			$('#chatroom-page-container').append(appendh);

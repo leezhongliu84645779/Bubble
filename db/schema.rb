@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119070600) do
+ActiveRecord::Schema.define(version: 20161230015001) do
 
   create_table "chatroom_users", force: :cascade do |t|
     t.integer  "chatroom_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20161119070600) do
     t.string   "size"
     t.string   "category"
     t.string   "visibility"
+    t.string   "position"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

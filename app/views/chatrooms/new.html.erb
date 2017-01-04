@@ -1,5 +1,14 @@
-<h1>New Chatroom</h1>
+<div id = "chatroom-page-container">
+	<div id = "chatroom-placeholder">
+    	<div id = "left-div">
+      		<%= link_to 'Explore Chatroom', chatrooms_path %>
+    	</div>
+    	<div id = "right-div">
+      		<%= link_to 'Create Chatroom', new_chatroom_path %>
+    	</div>
+    </div>
+	<div class = 'createchatroom'>
+		<%= render 'form' %>
+	</div>
+<div>
 
-<%= render 'form', chatroom: @chatroom %>
-
-<%= link_to 'Back', chatrooms_path %>

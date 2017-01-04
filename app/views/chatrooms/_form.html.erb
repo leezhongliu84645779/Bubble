@@ -3,8 +3,9 @@
   <%= form_for(@chatroom) do |f| %>
     <div class="field">
       <div><%= f.label :name, 'Group Name:' %><%= f.text_field :name %></div>
+      <div><%= f.label :position, 'Group Meet Position:' %><%= f.text_field :position %></div>
       <div><%= f.label :name, 'Desired Group size:' %><%= f.select :size, ['1-5 persons', '6-10 persons', '11-50 persons', '50-100 persons', '100-200 persons', 'More than 200 persons' ]%></div>
-      <div><%= f.label :name, 'Group Tag:' %><%= f.select :size, ['Sports', 'Music', 'Entertainment', 'NBA' ]%></div>
+      <div><%= f.label :name, 'Group Tag:' %><%= f.select :category, ['Sports', 'Music', 'Entertainment', 'NBA' ]%></div>
       <div><%= f.label :visibility, 'Group Visibility:' %></div>
       <br>
       <div><%= f.label :visibility, 'Public To Everyone'%><%= f.radio_button :visibility, 'PublicToEveryone' %></div>

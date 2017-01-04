@@ -1,6 +1,7 @@
 #chatroom-page-container
   #chatroom-placeholder
     #left-div
-      = link_to 'Explore Chatroom', chatrooms_path, :remote => true
+      = link_to 'Explore Chatroom', chatrooms_path
     #right-div
-      = link_to 'Create Chatroom', new_chatroom_path, :remote => true
+      = link_to 'Create Chatroom', new_chatroom_path
+  = render 'filter'
